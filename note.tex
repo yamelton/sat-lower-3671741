@@ -10,7 +10,7 @@
 \newcommand{\Prb}{\mathbb P}
 \title{A lower bound of 3.671741 for the random 3-SAT threshold}
 \author{Fedor Vorobyev}
-\date{Technical note, version 1.1\\7 October 2026}
+\date{Technical note, version 1.2\\7 October 2026}
 \hypersetup{pdftitle={A lower bound of 3.671741 for the random 3-SAT threshold},pdfauthor={Fedor Vorobyev}}
 \begin{document}
 \maketitle
@@ -33,8 +33,11 @@ cavity-method prediction of approximately $4.267$.
 Let $\Phi(n,m)$ have $n$ Boolean variables and $m$ independent clauses,
 each using three uniformly chosen distinct variables with independent
 fair signs. Whole clauses may repeat. Let $\alpha_3$ be its limiting
-satisfiability threshold, whose existence is established in~\cite{Carenini}
-and also in~\cite[Theorem 4.4]{OpenAI}, and let
+satisfiability threshold. Its existence was established by
+Carenini~\cite{Carenini} and also proved in~\cite[Theorem 4.4]{OpenAI},
+and, independently, in the author's draft~\cite[Theorem 1.1]{VorobyevExistence}.
+
+Let
 \[
  V(F)=\min_{\sigma}\#\{\text{clauses of }F\text{ violated by }\sigma\}.
 \]
@@ -242,5 +245,9 @@ S. Mertens, M. M\'ezard, and R. Zecchina.
 Random Structures \& Algorithms 28(3) (2006), pp. 340--373.
 \href{https://doi.org/10.1002/rsa.20090}{doi:10.1002/rsa.20090}.
 \url{https://arxiv.org/abs/cs/0309020}.
+\bibitem{VorobyevExistence}
+F. Vorobyev. \emph{A direct proof of convergence of the random
+$k$-SAT threshold}, draft, 7 October 2026.
+\url{https://github.com/yamelton/sat-constant-threshold}.
 \end{thebibliography}
 \end{document}

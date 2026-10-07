@@ -61,6 +61,13 @@
       "file": "spatial_coupling_latest.pdf",
       "source_url": "https://di.uoa.gr/~optas/papers/spatial.pdf",
       "sha256": "242b2ad14291b8c21b8ce160d0a3d55b2126eba95234da9b5ac42734bd0103d5"
+    },
+    {
+      "file": "sat-constant-threshold/paper/main.tex",
+      "source_url": "https://github.com/yamelton/sat-constant-threshold/blob/f8b42bffa474512e04b0ef459766a0ee454c8866/paper/main.tex",
+      "github_commit": "f8b42bffa474512e04b0ef459766a0ee454c8866",
+      "sha256": "40ffe8e22a6fbf63aebdac733d8270c3a1f04acfb2198e68638d760b8a9de861",
+      "role": "Later independent proof of threshold existence, cited for context; not an input to the violation-robustness deduction."
     }
   ],
   "note": "Source manuscripts are cited, not redistributed. Hashes identify the source files consulted. The numerical checker verifies only the scalar inequality."

@@ -1,6 +1,6 @@
 # A lower bound of 3.671741 for the random 3-SAT threshold
 
-**Fedor Vorobyev — technical note, version 1.1, 7 October 2026.**
+**Fedor Vorobyev — technical note, version 1.2, 7 October 2026.**
 
 **[Read the PDF](note.pdf)** · [LaTeX source](note.tex) · [Exact arithmetic checker](certify_3671741.py)
 
@@ -45,6 +45,7 @@ The checker establishes the scalar inequality only. The probabilistic theorems a
 3. **OpenAI.** *Computing the Random 3-SAT Threshold*, preprint dated 27 September 2026. [Pinned manuscript](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/article.pdf). Theorem 4.4 identifies the threshold across models; Proposition 4.6 gives linear violation robustness.
 4. **G. Carenini.** *A polynomial scaling window for random k-SAT and a proof of the satisfiability conjecture*. [ECCC TR26-229](https://eccc.weizmann.ac.il/report/2026/229/), 5 October 2026. Cited for threshold existence and its priority.
 5. **S. Mertens, M. Mézard, R. Zecchina.** *Threshold values of random K-SAT from the cavity method*. Random Structures & Algorithms 28(3) (2006), pp. 340–373. [arXiv:cs/0309020](https://arxiv.org/abs/cs/0309020). Source of the predicted value near 4.267.
+6. **F. Vorobyev.** *A direct proof of convergence of the random k-SAT threshold*, draft, 7 October 2026. [Repository](https://github.com/yamelton/sat-constant-threshold). Theorem 1.1 gives a later independent proof of threshold existence, following the results of Carenini and OpenAI. The lower-bound argument here uses OpenAI's violation-robustness theorem.
 
 [Source provenance](source_provenance.json) records the OpenAI commit and hashes of source files consulted. Source manuscripts are not redistributed here.
 
@@ -56,7 +57,7 @@ The checker establishes the scalar inequality only. The probabilistic theorems a
   title = {A lower bound of 3.671741 for the random 3-SAT threshold},
   year = {2026},
   month = oct,
-  note = {Technical note, version 1.1},
+  note = {Technical note, version 1.2},
   url = {https://github.com/yamelton/sat-lower-3671741}
 }
 ```
