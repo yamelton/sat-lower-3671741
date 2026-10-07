@@ -1,0 +1,67 @@
+{
+  "retrieved_on": "2026-10-07",
+  "openai_math_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "openai_math_tree": "a8e3481a92772ee311cdc9dd6409cd7b927a3fc1",
+  "sources": [
+    {
+      "file": "assembly.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/assembly.tex",
+      "github_blob_sha": "8443ded353f8b0e79305015d90b5b9bfc9cfd315",
+      "sha256": "aaeed0fe92985d3d129cfcd441b9dcdd1a5e4a181bd74c2fdd33eb24d22fd738"
+    },
+    {
+      "file": "certificates.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/certificates.tex",
+      "github_blob_sha": "0e3c7c9c561de09937aaf2279966e463b00205a3",
+      "sha256": "0226b1df2971a22ef41bee317dba05e66d10fe04f55081b0f977cc04a7f13595"
+    },
+    {
+      "file": "closure.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/closure.tex",
+      "github_blob_sha": "e9ae2c60c0cd0a6b63e5636b5813f15c84f2ca8f",
+      "sha256": "db3f14e5aaebacd504503176ab43e0d1b730133ccd180600019d786bd417ad18"
+    },
+    {
+      "file": "introduction.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/introduction.tex",
+      "github_blob_sha": "12ca1e984e69c16200889acf8b0633b228e15a06",
+      "sha256": "ce097bf0270147675456facc16237707e48a6cff8bd21fc1e5b51849600ae58c"
+    },
+    {
+      "file": "probability.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/probability.tex",
+      "github_blob_sha": "146da76420f840c5945f35a037d6dffd0bb7366c",
+      "sha256": "2995ca7a500a40072f4401e7b613990bba904e3bc85884fffccd8a33a9b5d37c"
+    },
+    {
+      "file": "proof-map.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/proof-map.tex",
+      "github_blob_sha": "617b49eef915ed9b9f1acf6fd53afd9cc9b151ee",
+      "sha256": "1445c71cc54d33dcf3c69ef2fc40e27ad78c53024829381201f9e8abfb0aae9b"
+    },
+    {
+      "file": "sensitivity.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/sensitivity.tex",
+      "github_blob_sha": "9242e378fa420fe60ca2a3d92878a783f922b11c",
+      "sha256": "7f7559b971fe3c43cb42ec6bde18ef4a88cc2841e7991769e5c572030164af8c"
+    },
+    {
+      "file": "transition.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/transition.tex",
+      "github_blob_sha": "98254ea1fab7933741165c3cd448ce75869147bc",
+      "sha256": "727bc3e62684c0b0f82ee9bd2dac022b42d515050b2058f571b0cbcd6d79305d"
+    },
+    {
+      "file": "trials.tex",
+      "source_url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026/build/sections/trials.tex",
+      "github_blob_sha": "97442c776b5847d80e0207938acda00badff3d9f",
+      "sha256": "be438adb9eb9c8f0dd851b59d9e6c51786c6a1bf799bbc7709d6c17c732e47ec"
+    },
+    {
+      "file": "spatial_coupling_latest.pdf",
+      "source_url": "https://di.uoa.gr/~optas/papers/spatial.pdf",
+      "sha256": "242b2ad14291b8c21b8ce160d0a3d55b2126eba95234da9b5ac42734bd0103d5"
+    }
+  ],
+  "note": "Source manuscripts are cited, not redistributed. Hashes identify the source files consulted. The numerical checker verifies only the scalar inequality."
+}

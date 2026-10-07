@@ -1,0 +1,238 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}[corollary]{Lemma}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\title{A lower bound of 3.671741 for the random 3-SAT threshold}
+\author{Fedor Vorobyev}
+\date{Technical note, version 1.0\\7 October 2026}
+\hypersetup{pdftitle={A lower bound of 3.671741 for the random 3-SAT threshold},pdfauthor={Fedor Vorobyev}}
+\begin{document}
+\maketitle
+\begin{abstract}
+Combining the spatial-coupling lower bound on the zero-violation-density
+threshold with the new linear violation robustness theorem yields
+\[
+ \alpha_3\ge
+ A:=\inf_{0\le x<1}\frac{4(1-x+x\log x)}{(1-x)^3}
+ >3.671741.
+\]
+The first input is due to Achlioptas, Hassani, Macris, and Urbanke;
+the second is Proposition 4.6 of OpenAI's \emph{Computing the Random
+3-SAT Threshold}. We give the transfer argument and a finite exact
+rational certificate for the numerical inequality. The constant $A$
+comes from the earlier spatial-coupling analysis; the deduction here
+transfers that bound to exact satisfiability.
+\end{abstract}
+
+\section{Statement and the missing implication}
+Let $\Phi(n,m)$ have $n$ Boolean variables and $m$ independent clauses,
+each using three uniformly chosen distinct variables with independent
+fair signs. Whole clauses may repeat. Let $\alpha_3$ be its limiting
+satisfiability threshold, whose existence is established in~\cite{Carenini}
+and also in~\cite[Theorem 4.4]{OpenAI}, and let
+\[
+ V(F)=\min_{\sigma}\#\{\text{clauses of }F\text{ violated by }\sigma\}.
+\]
+\begin{corollary}\label{thm:main}
+Taking the spatial-coupling theorem of \cite{AHMU,HMU} and the robustness
+theorem of \cite{OpenAI} as inputs,
+\[
+ \alpha_3\ge A>\frac{3671741}{10^6},
+ \qquad
+ A=\inf_{0\le x<1}\frac{4(1-x+x\log x)}{(1-x)^3},
+\]
+where $0\log0=0$. In particular, for every fixed
+$0\le a\le3671741/10^6$, $\Phi(n,\lfloor an\rfloor)$ is satisfiable with
+probability tending to one.
+\end{corollary}
+
+Together with the upper-bound theorem of~\cite{Vorobyev}, this gives
+\[
+ \boxed{3.671741<\alpha_3\le4.268.}
+\]
+
+The spatial-coupling result concerns vanishing minimum violation
+\emph{density}, rather than exact satisfaction. The new robustness
+proposition supplies the necessary connection. Threshold existence or
+computability alone is not substituted for that proposition.
+
+\section{Two probabilistic inputs}
+\paragraph{Spatial coupling.}
+Achlioptas, Hassani, Macris, and Urbanke establish a lower bound on the
+rough threshold: at every fixed density $a<A$, the limiting expected
+minimum number of violations per variable is zero~\cite{AHMU}.
+Their full manuscript, Theorem 4 and equations (90) and (92), characterizes the
+coupled unit-clause threshold using
+\[
+ \Phi_{\rm ind}(\ell,a,3)
+ =2-\ell\bigl(1-\log(\ell/2)\bigr)
+       -\frac a2(1-\ell/2)^3.
+\]
+Setting $\ell=2x$ gives the expression for $A$ above. The passage to
+ordinary formulas uses the asymptotic energy interpolation of
+Hassani, Macris, and Urbanke~\cite[Theorems 1--2]{HMU}.
+One takes the number of variables per position to infinity, then
+the chain length to infinity at fixed coupling width, and finally
+the width to infinity. We use this limiting statement, not a
+finite-chain equality of thresholds.
+
+\paragraph{Linear violation robustness.}
+In the relaxed Poisson model, variable positions inside each clause
+are independently sampled, and the number of clauses is Poisson with
+mean $an$. Proposition 4.6 of the OpenAI preprint~\cite{OpenAI} states that, for every fixed
+$a>\alpha_3$, there exists $\varepsilon(a)>0$ such that
+\begin{equation}\label{eq:robust}
+ \Prb\{V(F^{\rm rep}_{n,\operatorname{Poi}(an)})
+                   >\lfloor\varepsilon(a)n\rfloor\}\longrightarrow1.
+\end{equation}
+Theorem 4.4 of that paper identifies the threshold in this model
+with the proper-clause threshold. The robustness proof uses its
+free-deletion estimates; it does not assume the spatial-coupling
+numerical bound or the predicted threshold value.
+
+\section{Transferring zero violation density}
+Adding, deleting, or replacing one clause changes $V$ by at most one.
+This gives the needed model transfers without an assertion about
+finite-size satisfiability probabilities.
+
+Write $F^{\rm rep}_{n,m}$ for fixed-count clauses with independently
+sampled variable positions, and $F^{\rm prop}_{n,m}$ for proper clauses.
+Resample every nonproper clause independently from the proper law.
+Then, with $m=\lfloor an\rfloor$,
+\begin{equation}\label{eq:proper}
+ |\E V(F^{\rm rep}_{n,m})-\E V(F^{\rm prop}_{n,m})|
+ \le m\left[1-(1-1/n)(1-2/n)\right]\le3m/n.
+\end{equation}
+For an independent $M\sim\operatorname{Poi}(an)$, use one common
+infinite relaxed clause stream. Cauchy--Schwarz gives
+\begin{equation}\label{eq:poisson}
+ |\E V(F^{\rm rep}_{n,M})-\E V(F^{\rm rep}_{n,m})|
+ \le\E|M-m|\le\sqrt{an+1}.
+\end{equation}
+After division by $n$, both errors vanish. Thus the zero-energy
+conclusion from spatial coupling transfers to the model of
+\eqref{eq:robust}.
+
+Fix $a<A$. The spatial-coupling conclusion is
+\[
+ \frac1n\E V(F^{\rm rep}_{n,\operatorname{Poi}(an)})\longrightarrow0.
+\]
+If $a>\alpha_3$, equation~\eqref{eq:robust} instead gives
+\[
+ \liminf_{n\to\infty}\frac1n
+       \E V(F^{\rm rep}_{n,\operatorname{Poi}(an)})
+ \ge\varepsilon(a)>0,
+\]
+a contradiction. Therefore $a\le\alpha_3$ for every $a<A$, proving
+$\alpha_3\ge A$. Only a numerical lower bound for $A$ remains.
+
+\section{An exact rational certificate}
+Set
+\[
+ a_0=\frac{3671741}{10^6},\qquad N=128,\qquad
+ y=\frac{883413964}{10^9},\qquad \eta=\frac9{10^8}.
+\]
+For $t=1-x\in[0,1]$, the entropy series is
+\[
+ 1-x+x\log x
+ =\sum_{k=2}^{\infty}\frac{t^k}{k(k-1)}.
+\]
+At $t=1$ the identity follows by continuity or telescoping.
+Define the rational polynomial
+\[
+ P(t)=\sum_{k=2}^{128}\frac{4t^{k-2}}{k(k-1)}-a_0t.
+\]
+Every coefficient of $P''$ is nonnegative, so $P$ is convex on $[0,1]$.
+Its tangent at $y$ therefore gives, for every $t\in[0,1]$,
+\[
+ P(t)\ge P(y)+P'(y)(t-y)\ge P(y)-|P'(y)|.
+\]
+Exact rational arithmetic proves
+\begin{equation}\label{eq:certificate}
+ \boxed{P(y)-|P'(y)|>\frac9{10^8}.}
+\end{equation}
+The accompanying standard-library Python program
+\texttt{certify\_3671741.py} evaluates $P$ and $P'$ both by Horner's
+rule and by direct summation, and checks \eqref{eq:certificate} using
+integer comparisons. For orientation only, the rational values are
+approximately
+\[
+ P(y)=9.3928406844\cdot10^{-8},\qquad
+ P'(y)=3.7588568378\cdot10^{-9}.
+\]
+These decimal values are not used by the verifier.
+
+The omitted series terms are nonnegative. Thus for $0<t\le1$,
+\begin{align*}
+ \frac{4(1-x+x\log x)}{(1-x)^3}-a_0
+ &=\frac1t\left(
+       \sum_{k=2}^{\infty}\frac{4t^{k-2}}{k(k-1)}-a_0t\right)\\
+ &\ge\frac{P(t)}t>\eta.
+\end{align*}
+Taking the infimum proves $A\ge a_0+\eta>a_0$, completing
+Corollary~\ref{thm:main}. In particular the theorem's strict inequality
+does not depend on interpreting a rounded decimal as an exact bound.
+
+The stationary equation for the interior minimizer is
+\[
+ (1+2x)\log x+3(1-x)=0.
+\]
+Its numerical solution gives $x\approx0.11658603275812085$ and
+$A\approx3.671741106632344$. These approximations describe the exact
+variational constant; the rational certificate above is sufficient
+for the stated lower bound.
+
+\section{Attribution and verification}
+The constant $A$ is inherited from the spatial-coupling work of
+Achlioptas, Hassani, Macris, and Urbanke. The contribution of this note
+is the deduction of an exact-satisfiability lower bound using the
+violation-robustness proposition of~\cite{OpenAI}. The upper bound
+$4.268$ is a separate result~\cite{Vorobyev} and is not an input to
+the lower-bound argument.
+
+The probabilistic results are used as cited theorems. The accompanying
+verifier checks the scalar inequality using exact rational arithmetic;
+it does not verify the proofs of those theorems. This note has no
+complete Lean formalization.
+
+\paragraph{Use of language models.}
+OpenAI language models assisted with identifying the combination of
+results, checking the deduction, developing the arithmetic certificate,
+and drafting this note. Additional checks were performed in separate
+model runs; these do not constitute independent human peer review.
+The author directed the work and is responsible for the final text.
+
+\begin{thebibliography}{9}
+\bibitem{AHMU}
+D. Achlioptas, S. H. Hassani, N. Macris, and R. Urbanke.
+\emph{Bounds for Random Constraint Satisfaction Problems via Spatial
+Coupling}. SODA 2016, pp. 469--479.
+\href{https://doi.org/10.1137/1.9781611974331.ch35}{doi:10.1137/1.9781611974331.ch35}.
+The authors' full manuscript is available at
+\url{https://di.uoa.gr/~optas/papers/spatial.pdf}; Theorem 4 and
+equations (90) and (92) are in the appended full version, pp. 29--30.
+\bibitem{HMU}
+S. H. Hassani, N. Macris, and R. Urbanke.
+\emph{Threshold Saturation in Spatially Coupled Constraint Satisfaction
+Problems}. Journal of Statistical Physics 150 (2013), pp. 807--850.
+\url{https://arxiv.org/abs/1112.6320v2}.
+\bibitem{OpenAI}
+OpenAI. \emph{Computing the Random 3-SAT Threshold}, preprint dated
+27 September 2026. Theorem 4.4, p. 11, and Proposition 4.6, pp. 13--14.
+\href{https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Computing-the-Random-3-SAT-Threshold-September-27-2026}{Manuscript and source at the cited revision}.
+\bibitem{Carenini}
+G. Carenini. \emph{A polynomial scaling window for random $k$-SAT
+and a proof of the satisfiability conjecture}. ECCC TR26-229,
+5 October 2026. \url{https://eccc.weizmann.ac.il/report/2026/229/}.
+\bibitem{Vorobyev}
+F. Vorobyev. \emph{An upper bound of 4.268 for the random 3-SAT
+satisfiability threshold}, October 2026.
+\url{https://github.com/yamelton/sat-upper-4268}.
+\end{thebibliography}
+\end{document}
