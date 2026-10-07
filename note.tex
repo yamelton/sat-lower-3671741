@@ -10,24 +10,23 @@
 \newcommand{\Prb}{\mathbb P}
 \title{A lower bound of 3.671741 for the random 3-SAT threshold}
 \author{Fedor Vorobyev}
-\date{Technical note, version 1.0\\7 October 2026}
+\date{Technical note, version 1.1\\7 October 2026}
 \hypersetup{pdftitle={A lower bound of 3.671741 for the random 3-SAT threshold},pdfauthor={Fedor Vorobyev}}
 \begin{document}
 \maketitle
 \begin{abstract}
-Combining the spatial-coupling lower bound on the zero-violation-density
-threshold with the new linear violation robustness theorem yields
+We show that the random 3-SAT satisfiability threshold satisfies
 \[
- \alpha_3\ge
- A:=\inf_{0\le x<1}\frac{4(1-x+x\log x)}{(1-x)^3}
- >3.671741.
+ \alpha_3>3.671741.
 \]
-The first input is due to Achlioptas, Hassani, Macris, and Urbanke;
-the second is Proposition 4.6 of OpenAI's \emph{Computing the Random
-3-SAT Threshold}. We give the transfer argument and a finite exact
-rational certificate for the numerical inequality. The constant $A$
-comes from the earlier spatial-coupling analysis; the deduction here
-transfers that bound to exact satisfiability.
+The argument combines the spatial-coupling bound of Achlioptas, Hassani,
+Macris, and Urbanke with the linear violation robustness theorem in
+OpenAI's \emph{Computing the Random 3-SAT Threshold}. The numerical
+constant comes from the earlier spatial-coupling analysis; the deduction
+here transfers that bound to exact satisfiability. We give the transfer
+argument and a finite exact rational certificate for the numerical
+inequality. The lower bound remains substantially below the
+cavity-method prediction of approximately $4.267$.
 \end{abstract}
 
 \section{Statement and the missing implication}
@@ -56,6 +55,9 @@ Together with the upper-bound theorem of~\cite{Vorobyev}, this gives
 \[
  \boxed{3.671741<\alpha_3\le4.268.}
 \]
+The cavity method predicts $\alpha_3\approx4.267$~\cite{MMZ}.
+The lower bound proved here is about $0.60$ clauses per variable below
+that prediction, so a substantial gap remains.
 
 The spatial-coupling result concerns vanishing minimum violation
 \emph{density}, rather than exact satisfaction. The new robustness
@@ -234,5 +236,11 @@ and a proof of the satisfiability conjecture}. ECCC TR26-229,
 F. Vorobyev. \emph{An upper bound of 4.268 for the random 3-SAT
 satisfiability threshold}, October 2026.
 \url{https://github.com/yamelton/sat-upper-4268}.
+\bibitem{MMZ}
+S. Mertens, M. M\'ezard, and R. Zecchina.
+\emph{Threshold values of random $K$-SAT from the cavity method}.
+Random Structures \& Algorithms 28(3) (2006), pp. 340--373.
+\href{https://doi.org/10.1002/rsa.20090}{doi:10.1002/rsa.20090}.
+\url{https://arxiv.org/abs/cs/0309020}.
 \end{thebibliography}
 \end{document}
